@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <div class="flex-bar">
+        <div class="location">
+          <ion-icon name="locate" style="vertical-align: middle; margin-top:10px; opacity:0.5;"></ion-icon>
+          <ion-button fill="clear" style="color:#666;">Location <ion-icon name="arrow-dropright" style="color:#666;">
+            </ion-icon>
+          </ion-button>
+        </div>
+        <!-- <div class="searchbar">
+          <ion-searchbar animated></ion-searchbar>
+        </div> -->
+        <!-- <div class="notify">
+            <ion-button fill="clear" style="float: right;">
+                <ion-icon name="notifications" style="color: #7044ff;"></ion-icon>
+              </ion-button>
+          </div> -->
+        <div class="notify">
+          <ion-button fill="clear" style="float: right;">
+            <ion-icon name="notifications" style="color: #7044ff;"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="none">
+    <ion-card class="welcome-card" *ngFor="let item of cookList">
+      <ion-img src="{{ item.cardImageUrl }}"></ion-img>
+      <ion-card-header>
+        <ion-card-subtitle style="font-size:16px;">
+          <ion-icon name="time" style="margin: 0 5px; color: #7044ff; vertical-align:middle;"></ion-icon> <span
+            style="font-size:10px;">{{ item.openTime }} - {{ item.closeTime}}</span>
+          <span style="float: right;">
+            <ion-icon name="basket" style="margin: 0 5px;"></ion-icon>
+            <ion-icon name="bicycle"></ion-icon>
+          </span>
+        </ion-card-subtitle>
+        <ion-card-title style="font-weight:bold; padding-bottom: 0; margin-bottom: 0;">{{ item.name }}</ion-card-title>
+        <p style="font-size:8px; font-weight:bold; padding-top: 0; margin-top: 0; margin-left: 3px;">LUNCH-DINNER</p>
+      </ion-card-header>
+      <ion-card-content>
+        <div class="flex-row">
+          <div class="start-price">
+            <p style="font-size:7px; font-weight:bolder; color: #7044ff;opacity:0.5">STARTS AT</p>
+            <p style="font-size:15px; font-weight:bold; color: #7044ff;">&#8377; {{ item.startsAt }}</p>
+          </div>
+          <div class="cook">
+            <div style="font-size:10px; margin: 8px 8px 0 0;">{{ item.cookName}}</div>
+            <div><img class="cook-profile" src="{{ item.profileImageUrl }}" alt=""></div>
+          </div>
+        </div>
+        <hr style="border-top:1px solid #7044ff; opacity: 0.2; " />
+        <div class="flex-footer">
+          <div>
+            <ion-icon name="pin"></ion-icon> {{ item.distance }} distance
+          </div>
+          <div>
+            <ion-icon name="alarm"></ion-icon> {{ item.estimateTime }}
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="search"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

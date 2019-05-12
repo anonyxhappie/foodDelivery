@@ -1,0 +1,35 @@
+.flex-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.searchbar-input {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.welcome-card ion-img {
+  max-height: 20vh;
+  overflow: hidden;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cook-profile{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.cook {
+  display: flex;
+}
+
+.flex-footer {
+  display: flex;
+  justify-content: space-evenly;
+  font-size:10px;
+}
